@@ -1,6 +1,6 @@
 'use client'
 
-import L from 'leaflet'
+import L from "leaflet"
 import MarkerIcon from '../node_modules/leaflet/dist/images/marker-icon.png'
 import MarkerShadow from '../node_modules/leaflet/dist/images/marker-shadow.png'
 import 'leaflet/dist/leaflet.css'
@@ -41,10 +41,13 @@ const Map = () => {
         <div>
             <SearchLocation />
             <GetMyLocation />
-            <MapContainer style={{
+            <MapContainer 
+            style={{
                 height: '100vh',
                 width: '100vw'
-            }} center={coord} zoom={13} scrollWheelZoom={false}>
+            }}
+            center={[-6.175216345345835, 106.82722331714083]} zoom={13} scrollWheelZoom={false}
+            >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -61,13 +64,11 @@ const Map = () => {
                         shadowSize: [41, 41],
                     })
                 } position={[51.505, -0.09]}>
-                     <Popup>
+                    <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                 </Marker>
             </MapContainer>
         </div>
-    )
-}
-
+)}
 export default Map
